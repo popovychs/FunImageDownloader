@@ -12,6 +12,7 @@
 		3EDD1C0C1CBFD910002319CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3EDD1C0B1CBFD910002319CC /* Assets.xcassets */; };
 		3EDD1C0F1CBFD910002319CC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EDD1C0D1CBFD910002319CC /* LaunchScreen.storyboard */; };
 		3EDD1C171CBFEC2A002319CC /* SPTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDD1C161CBFEC2A002319CC /* SPTableViewController.swift */; };
+		3EDD1C1C1CBFF8C6002319CC /* SPTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDD1C1B1CBFF8C6002319CC /* SPTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		3EDD1C0E1CBFD910002319CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3EDD1C101CBFD910002319CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3EDD1C161CBFEC2A002319CC /* SPTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SPTableViewController.swift; path = Controllers/SPTableViewController.swift; sourceTree = "<group>"; };
+		3EDD1C1B1CBFF8C6002319CC /* SPTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SPTableViewCell.swift; path = Controllers/SPTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +59,7 @@
 				3EDD1C041CBFD910002319CC /* AppDelegate.swift */,
 				3EDD1C181CBFEC9C002319CC /* Controllers */,
 				3EDD1C191CBFECD5002319CC /* Views */,
-				3EDD1C1A1CBFED5F002319CC /* Other */,
+				3EDD1C1A1CBFED5F002319CC /* Resources */,
 			);
 			path = FunImageDownloader;
 			sourceTree = "<group>";
@@ -66,6 +68,7 @@
 			isa = PBXGroup;
 			children = (
 				3EDD1C161CBFEC2A002319CC /* SPTableViewController.swift */,
+				3EDD1C1B1CBFF8C6002319CC /* SPTableViewCell.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -79,13 +82,13 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
-		3EDD1C1A1CBFED5F002319CC /* Other */ = {
+		3EDD1C1A1CBFED5F002319CC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 				3EDD1C0B1CBFD910002319CC /* Assets.xcassets */,
 				3EDD1C101CBFD910002319CC /* Info.plist */,
 			);
-			name = Other;
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -160,6 +163,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3EDD1C171CBFEC2A002319CC /* SPTableViewController.swift in Sources */,
+				3EDD1C1C1CBFF8C6002319CC /* SPTableViewCell.swift in Sources */,
 				3EDD1C051CBFD910002319CC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
