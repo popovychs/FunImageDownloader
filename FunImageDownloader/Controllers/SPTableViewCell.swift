@@ -18,6 +18,7 @@ class SPTableViewCell: UITableViewCell {
     @IBOutlet var progressView: UIProgressView!
     @IBOutlet var percentsProgressLabel: UILabel!
     
+    // MARK: - Functions
 
     override func awakeFromNib() {
         super.awakeFromNib()

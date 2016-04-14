@@ -59,7 +59,7 @@
 				3EDD1C041CBFD910002319CC /* AppDelegate.swift */,
 				3EDD1C181CBFEC9C002319CC /* Controllers */,
 				3EDD1C191CBFECD5002319CC /* Views */,
-				3EDD1C1A1CBFED5F002319CC /* Resources */,
+				3EDD1C1A1CBFED5F002319CC /* Assets */,
 			);
 			path = FunImageDownloader;
 			sourceTree = "<group>";
@@ -82,13 +82,13 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
-		3EDD1C1A1CBFED5F002319CC /* Resources */ = {
+		3EDD1C1A1CBFED5F002319CC /* Assets */ = {
 			isa = PBXGroup;
 			children = (
 				3EDD1C0B1CBFD910002319CC /* Assets.xcassets */,
 				3EDD1C101CBFD910002319CC /* Info.plist */,
 			);
-			name = Resources;
+			name = Assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
