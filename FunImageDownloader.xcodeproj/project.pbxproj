@@ -1,0 +1,293 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3EDD1C051CBFD910002319CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDD1C041CBFD910002319CC /* AppDelegate.swift */; };
+		3EDD1C071CBFD910002319CC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDD1C061CBFD910002319CC /* ViewController.swift */; };
+		3EDD1C0A1CBFD910002319CC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EDD1C081CBFD910002319CC /* Main.storyboard */; };
+		3EDD1C0C1CBFD910002319CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3EDD1C0B1CBFD910002319CC /* Assets.xcassets */; };
+		3EDD1C0F1CBFD910002319CC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EDD1C0D1CBFD910002319CC /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3EDD1C011CBFD910002319CC /* FunImageDownloader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FunImageDownloader.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3EDD1C041CBFD910002319CC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3EDD1C061CBFD910002319CC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3EDD1C091CBFD910002319CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3EDD1C0B1CBFD910002319CC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3EDD1C0E1CBFD910002319CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3EDD1C101CBFD910002319CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3EDD1BFE1CBFD910002319CC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3EDD1BF81CBFD90F002319CC = {
+			isa = PBXGroup;
+			children = (
+				3EDD1C031CBFD910002319CC /* FunImageDownloader */,
+				3EDD1C021CBFD910002319CC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3EDD1C021CBFD910002319CC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3EDD1C011CBFD910002319CC /* FunImageDownloader.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3EDD1C031CBFD910002319CC /* FunImageDownloader */ = {
+			isa = PBXGroup;
+			children = (
+				3EDD1C041CBFD910002319CC /* AppDelegate.swift */,
+				3EDD1C061CBFD910002319CC /* ViewController.swift */,
+				3EDD1C081CBFD910002319CC /* Main.storyboard */,
+				3EDD1C0B1CBFD910002319CC /* Assets.xcassets */,
+				3EDD1C0D1CBFD910002319CC /* LaunchScreen.storyboard */,
+				3EDD1C101CBFD910002319CC /* Info.plist */,
+			);
+			path = FunImageDownloader;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3EDD1C001CBFD910002319CC /* FunImageDownloader */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3EDD1C131CBFD910002319CC /* Build configuration list for PBXNativeTarget "FunImageDownloader" */;
+			buildPhases = (
+				3EDD1BFD1CBFD910002319CC /* Sources */,
+				3EDD1BFE1CBFD910002319CC /* Frameworks */,
+				3EDD1BFF1CBFD910002319CC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FunImageDownloader;
+			productName = FunImageDownloader;
+			productReference = 3EDD1C011CBFD910002319CC /* FunImageDownloader.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3EDD1BF91CBFD90F002319CC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = popovychs;
+				TargetAttributes = {
+					3EDD1C001CBFD910002319CC = {
+						CreatedOnToolsVersion = 7.3;
+					};
+				};
+			};
+			buildConfigurationList = 3EDD1BFC1CBFD90F002319CC /* Build configuration list for PBXProject "FunImageDownloader" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3EDD1BF81CBFD90F002319CC;
+			productRefGroup = 3EDD1C021CBFD910002319CC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3EDD1C001CBFD910002319CC /* FunImageDownloader */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3EDD1BFF1CBFD910002319CC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3EDD1C0F1CBFD910002319CC /* LaunchScreen.storyboard in Resources */,
+				3EDD1C0C1CBFD910002319CC /* Assets.xcassets in Resources */,
+				3EDD1C0A1CBFD910002319CC /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3EDD1BFD1CBFD910002319CC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3EDD1C071CBFD910002319CC /* ViewController.swift in Sources */,
+				3EDD1C051CBFD910002319CC /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		3EDD1C081CBFD910002319CC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3EDD1C091CBFD910002319CC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3EDD1C0D1CBFD910002319CC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3EDD1C0E1CBFD910002319CC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3EDD1C111CBFD910002319CC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3EDD1C121CBFD910002319CC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3EDD1C141CBFD910002319CC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = FunImageDownloader/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.popovychs.FunImageDownloader;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		3EDD1C151CBFD910002319CC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = FunImageDownloader/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.popovychs.FunImageDownloader;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3EDD1BFC1CBFD90F002319CC /* Build configuration list for PBXProject "FunImageDownloader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3EDD1C111CBFD910002319CC /* Debug */,
+				3EDD1C121CBFD910002319CC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3EDD1C131CBFD910002319CC /* Build configuration list for PBXNativeTarget "FunImageDownloader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3EDD1C141CBFD910002319CC /* Debug */,
+				3EDD1C151CBFD910002319CC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3EDD1BF91CBFD90F002319CC /* Project object */;
+}
