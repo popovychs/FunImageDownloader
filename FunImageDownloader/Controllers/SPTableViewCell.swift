@@ -9,6 +9,15 @@
 import UIKit
 
 class SPTableViewCell: UITableViewCell {
+    
+    // MARK: - Properties
+    
+    @IBOutlet var imagePreview: UIImageView!
+    @IBOutlet var imageName: UILabel!
+    @IBOutlet var startOrStopDownloadImage: UIButton!
+    @IBOutlet var progressView: UIProgressView!
+    @IBOutlet var percentsProgressLabel: UILabel!
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()

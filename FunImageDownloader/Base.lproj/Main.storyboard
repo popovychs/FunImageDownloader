@@ -40,8 +40,21 @@
                                         <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="tpd-Zz-BCo">
                                             <rect key="frame" x="126" y="46" width="378" height="2"/>
                                         </progressView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ou-5J-gvu">
+                                            <rect key="frame" x="462" y="8" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="imageName" destination="RPC-8a-cIr" id="hUE-jx-GOm"/>
+                                    <outlet property="imagePreview" destination="yYM-qU-Zg6" id="2aG-dD-oEv"/>
+                                    <outlet property="percentsProgressLabel" destination="9ou-5J-gvu" id="zPC-Zt-Vhy"/>
+                                    <outlet property="progressView" destination="tpd-Zz-BCo" id="cQj-tx-RxK"/>
+                                    <outlet property="startOrStopDownloadImage" destination="FAj-fw-njT" id="bCv-Qu-AfA"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
