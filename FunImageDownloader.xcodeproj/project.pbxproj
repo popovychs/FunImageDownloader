@@ -13,6 +13,7 @@
 		3EDD1C0F1CBFD910002319CC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EDD1C0D1CBFD910002319CC /* LaunchScreen.storyboard */; };
 		3EDD1C171CBFEC2A002319CC /* SPTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDD1C161CBFEC2A002319CC /* SPTableViewController.swift */; };
 		3EDD1C1C1CBFF8C6002319CC /* SPTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDD1C1B1CBFF8C6002319CC /* SPTableViewCell.swift */; };
+		3EE8D8021CC1828700AD47F0 /* SPModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE8D8011CC1828700AD47F0 /* SPModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		3EDD1C101CBFD910002319CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3EDD1C161CBFEC2A002319CC /* SPTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SPTableViewController.swift; path = Controllers/SPTableViewController.swift; sourceTree = "<group>"; };
 		3EDD1C1B1CBFF8C6002319CC /* SPTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SPTableViewCell.swift; path = Controllers/SPTableViewCell.swift; sourceTree = "<group>"; };
+		3EE8D8011CC1828700AD47F0 /* SPModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SPModel.swift; path = Model/SPModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			children = (
 				3EDD1C041CBFD910002319CC /* AppDelegate.swift */,
 				3EDD1C181CBFEC9C002319CC /* Controllers */,
+				3EE8D8031CC1829300AD47F0 /* Model */,
 				3EDD1C191CBFECD5002319CC /* Views */,
 				3EDD1C1A1CBFED5F002319CC /* Assets */,
 			);
@@ -89,6 +92,14 @@
 				3EDD1C101CBFD910002319CC /* Info.plist */,
 			);
 			name = Assets;
+			sourceTree = "<group>";
+		};
+		3EE8D8031CC1829300AD47F0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3EE8D8011CC1828700AD47F0 /* SPModel.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,6 +173,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3EE8D8021CC1828700AD47F0 /* SPModel.swift in Sources */,
 				3EDD1C171CBFEC2A002319CC /* SPTableViewController.swift in Sources */,
 				3EDD1C1C1CBFF8C6002319CC /* SPTableViewCell.swift in Sources */,
 				3EDD1C051CBFD910002319CC /* AppDelegate.swift in Sources */,
@@ -314,6 +326,7 @@
 				3EDD1C151CBFD910002319CC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

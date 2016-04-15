@@ -25,7 +25,7 @@
                                             <rect key="frame" x="8" y="0.0" width="110" height="69"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RPC-8a-cIr">
-                                            <rect key="frame" x="126" y="0.0" width="42" height="21"/>
+                                            <rect key="frame" x="126" y="0.0" width="230" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -36,6 +36,9 @@
                                             <state key="normal" title="Button">
                                                 <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             </state>
+                                            <connections>
+                                                <action selector="pressButton:" destination="b08-89-N0w" eventType="touchUpInside" id="m0h-la-gA7"/>
+                                            </connections>
                                         </button>
                                         <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="tpd-Zz-BCo">
                                             <rect key="frame" x="126" y="46" width="378" height="2"/>
@@ -53,7 +56,6 @@
                                     <outlet property="imagePreview" destination="yYM-qU-Zg6" id="2aG-dD-oEv"/>
                                     <outlet property="percentsProgressLabel" destination="9ou-5J-gvu" id="zPC-Zt-Vhy"/>
                                     <outlet property="progressView" destination="tpd-Zz-BCo" id="cQj-tx-RxK"/>
-                                    <outlet property="startOrStopDownloadImage" destination="FAj-fw-njT" id="bCv-Qu-AfA"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

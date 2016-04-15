@@ -14,7 +14,6 @@ class SPTableViewCell: UITableViewCell {
     
     @IBOutlet var imagePreview: UIImageView!
     @IBOutlet var imageName: UILabel!
-    @IBOutlet var startOrStopDownloadImage: UIButton!
     @IBOutlet var progressView: UIProgressView!
     @IBOutlet var percentsProgressLabel: UILabel!
     
@@ -29,6 +28,10 @@ class SPTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    @IBAction func pressButton(sender: AnyObject) {
+        
     }
 
 }
