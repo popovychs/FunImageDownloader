@@ -8,7 +8,15 @@
 
 import UIKit
 
+protocol DelegateProtocolCell {
+    func didTabButtonWithCell(cell: SPTableViewCell)
+}
+
 class SPTableViewCell: UITableViewCell {
+    
+    // MARK: Delegate Property
+    
+    var cellDelegate : DelegateProtocolCell? = nil
     
     // MARK: - Properties
     
@@ -16,6 +24,9 @@ class SPTableViewCell: UITableViewCell {
     @IBOutlet var imageName: UILabel!
     @IBOutlet var progressView: UIProgressView!
     @IBOutlet var percentsProgressLabel: UILabel!
+    @IBOutlet var myButton: UIButton!
+    
+    var cellImageLikn : String?
     
     // MARK: - Functions
 
@@ -32,6 +43,11 @@ class SPTableViewCell: UITableViewCell {
     
     @IBAction func pressButton(sender: AnyObject) {
         
+        myButton.setTitle(" STOP ", forState: .Normal)
+
+        if (cellDelegate != nil) {
+            cellDelegate?.didTabButtonWithCell(self)
+        }
     }
 
 }

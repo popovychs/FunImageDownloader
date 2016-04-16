@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SPTableViewController: UITableViewController {
+class SPTableViewController: UITableViewController, DelegateProtocolCell {
     
     // MARK - Properties
     
@@ -43,6 +43,10 @@ class SPTableViewController: UITableViewController {
         }
         
         return model
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        
     }
     
     override func viewDidLoad() {
@@ -83,9 +87,40 @@ class SPTableViewController: UITableViewController {
         
         let modelItem = model[indexPath.row]
         
+        cell.cellDelegate = self
+        
         cell.imageName.text = modelItem.name
-
+        cell.cellImageLikn = modelItem.link
+        
+        cell.imagePreview.image = modelItem.image
+        
         return cell
+    }
+    
+    func didTabButtonWithCell(cell: SPTableViewCell){
+        
+        let urlString = NSURL(string: cell.cellImageLikn!)
+        
+        downloadImage(urlString!)
+    }
+    
+    // MARK: - Download Image Func
+    
+    func getDataFromUrl(url: NSURL, completion: ((data: NSData?, response: NSURLResponse?, error: NSError?) -> Void)) {
+        NSURLSession.sharedSession().dataTaskWithURL(url) { (data, response, error) in completion(data: data, response: response, error: error)}.resume()
+    }
+    
+    func downloadImage(url: NSURL) {
+        print("Download Started")
+        print("lastPathComponent: " + (url.lastPathComponent ?? ""))
+        getDataFromUrl(url) { (data, response, error) in
+            dispatch_async(dispatch_get_main_queue()) { () -> Void in
+                guard let data = data where error == nil else { return }
+                print(response?.suggestedFilename ?? "")
+                print("Download Finished")
+                //model.image = UIImage(data: data)
+            }
+        }
     }
 
     /*

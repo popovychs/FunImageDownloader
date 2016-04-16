@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Table View Controller-->
@@ -21,39 +22,75 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="69"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yYM-qU-Zg6">
-                                            <rect key="frame" x="8" y="0.0" width="110" height="69"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yYM-qU-Zg6">
+                                            <rect key="frame" x="18" y="0.0" width="100" height="69"/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RPC-8a-cIr">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RPC-8a-cIr">
                                             <rect key="frame" x="126" y="0.0" width="230" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="230" id="gfX-gH-5I4"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FAj-fw-njT">
-                                            <rect key="frame" x="512" y="8" width="80" height="53"/>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FAj-fw-njT">
+                                            <rect key="frame" x="547" y="19" width="50" height="30"/>
                                             <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            <state key="normal" title="Button">
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                            <state key="normal" title="START">
                                                 <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             </state>
                                             <connections>
                                                 <action selector="pressButton:" destination="b08-89-N0w" eventType="touchUpInside" id="m0h-la-gA7"/>
                                             </connections>
                                         </button>
-                                        <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="tpd-Zz-BCo">
+                                        <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="tpd-Zz-BCo">
                                             <rect key="frame" x="126" y="46" width="378" height="2"/>
                                         </progressView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ou-5J-gvu">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ou-5J-gvu">
                                             <rect key="frame" x="462" y="8" width="42" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="tpd-Zz-BCo" firstAttribute="leading" secondItem="Qdh-Kj-Tmr" secondAttribute="leadingMargin" constant="10" id="1En-um-Y4c"/>
+                                        <constraint firstItem="FAj-fw-njT" firstAttribute="trailing" secondItem="Qdh-Kj-Tmr" secondAttribute="trailingMargin" constant="5" id="2oz-t0-nVa"/>
+                                        <constraint firstItem="yYM-qU-Zg6" firstAttribute="leading" secondItem="Qdh-Kj-Tmr" secondAttribute="leadingMargin" constant="10" id="7EL-lt-fDA"/>
+                                        <constraint firstItem="yYM-qU-Zg6" firstAttribute="centerY" secondItem="Qdh-Kj-Tmr" secondAttribute="centerY" id="8iP-q6-QIB"/>
+                                        <constraint firstItem="RPC-8a-cIr" firstAttribute="leading" secondItem="yYM-qU-Zg6" secondAttribute="trailing" constant="10" id="BsB-pH-th4"/>
+                                        <constraint firstItem="9ou-5J-gvu" firstAttribute="trailing" secondItem="tpd-Zz-BCo" secondAttribute="trailing" id="DfS-Xg-2vo"/>
+                                        <constraint firstItem="yYM-qU-Zg6" firstAttribute="leading" secondItem="Qdh-Kj-Tmr" secondAttribute="leadingMargin" constant="10" id="GhP-Kf-KhZ"/>
+                                        <constraint firstItem="9ou-5J-gvu" firstAttribute="top" secondItem="Qdh-Kj-Tmr" secondAttribute="topMargin" id="IMx-mM-UfS"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="tpd-Zz-BCo" secondAttribute="trailing" constant="88" id="NRl-vZ-Aod"/>
+                                        <constraint firstItem="RPC-8a-cIr" firstAttribute="top" secondItem="yYM-qU-Zg6" secondAttribute="top" id="Nn7-mo-KVt"/>
+                                        <constraint firstItem="RPC-8a-cIr" firstAttribute="top" secondItem="Qdh-Kj-Tmr" secondAttribute="top" id="Qa1-qS-DhH"/>
+                                        <constraint firstItem="FAj-fw-njT" firstAttribute="leading" secondItem="9ou-5J-gvu" secondAttribute="trailing" constant="43" id="SNo-Ia-DVk"/>
+                                        <constraint firstItem="tpd-Zz-BCo" firstAttribute="top" secondItem="RPC-8a-cIr" secondAttribute="bottom" constant="25" id="Xbx-zn-xgn"/>
+                                        <constraint firstItem="9ou-5J-gvu" firstAttribute="leading" secondItem="RPC-8a-cIr" secondAttribute="trailing" constant="106" id="Y66-Ot-XOW"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="FAj-fw-njT" secondAttribute="trailing" constant="10" id="e6X-a2-UkA"/>
+                                        <constraint firstItem="FAj-fw-njT" firstAttribute="centerY" secondItem="Qdh-Kj-Tmr" secondAttribute="centerY" id="rHW-1T-EjI"/>
+                                        <constraint firstItem="tpd-Zz-BCo" firstAttribute="leading" secondItem="RPC-8a-cIr" secondAttribute="leading" id="zZe-kh-QMU"/>
+                                        <constraint firstItem="RPC-8a-cIr" firstAttribute="leading" secondItem="tpd-Zz-BCo" secondAttribute="leading" id="zfk-Ug-uBQ"/>
+                                        <constraint firstItem="tpd-Zz-BCo" firstAttribute="leading" secondItem="yYM-qU-Zg6" secondAttribute="trailing" constant="8" symbolic="YES" id="zyP-oh-hge"/>
+                                    </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="7EL-lt-fDA"/>
+                                            <exclude reference="BsB-pH-th4"/>
+                                            <exclude reference="zfk-Ug-uBQ"/>
+                                            <exclude reference="1En-um-Y4c"/>
+                                            <exclude reference="2oz-t0-nVa"/>
+                                            <exclude reference="e6X-a2-UkA"/>
+                                        </mask>
+                                    </variation>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="imageName" destination="RPC-8a-cIr" id="hUE-jx-GOm"/>
                                     <outlet property="imagePreview" destination="yYM-qU-Zg6" id="2aG-dD-oEv"/>
+                                    <outlet property="myButton" destination="FAj-fw-njT" id="1WU-sJ-oCL"/>
                                     <outlet property="percentsProgressLabel" destination="9ou-5J-gvu" id="zPC-Zt-Vhy"/>
                                     <outlet property="progressView" destination="tpd-Zz-BCo" id="cQj-tx-RxK"/>
                                 </connections>

@@ -23,4 +23,6 @@ class SPModel {
         self.link = link
         self.image = image
     }
+    
+    
 }
