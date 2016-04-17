@@ -18,10 +18,10 @@ class SPModel {
  
     // MARK - Initialization
     
-    init(name: String, link: String, image: UIImage?){
+    init(name: String, link: String){
         self.name = name
         self.link = link
-        self.image = image
+        //self.image = image
     }
     
     

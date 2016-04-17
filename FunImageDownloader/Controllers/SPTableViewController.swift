@@ -8,6 +8,8 @@
 
 import UIKit
 
+var currentIndexPath : NSIndexPath?
+
 class SPTableViewController: UITableViewController, DelegateProtocolCell {
     
     // MARK - Properties
@@ -39,7 +41,7 @@ class SPTableViewController: UITableViewController, DelegateProtocolCell {
     func setModel(dictionary: [String:String]) -> [SPModel] {
         
         for (key, value) in dictionary{
-            model.append(SPModel(name: key, link: value, image: nil))
+            model.append(SPModel(name: key, link: value))
         }
         
         return model
@@ -56,7 +58,8 @@ class SPTableViewController: UITableViewController, DelegateProtocolCell {
         
         model = setModel(imagesLinksAdnNames)
         
-
+        self.tableView.reloadData()
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -92,7 +95,9 @@ class SPTableViewController: UITableViewController, DelegateProtocolCell {
         cell.imageName.text = modelItem.name
         cell.cellImageLikn = modelItem.link
         
-        cell.imagePreview.image = modelItem.image
+        if modelItem.image != nil{
+            cell.imagePreview.image = modelItem.image
+        }
         
         return cell
     }
@@ -101,7 +106,12 @@ class SPTableViewController: UITableViewController, DelegateProtocolCell {
         
         let urlString = NSURL(string: cell.cellImageLikn!)
         
+        currentIndexPath = self.tableView.indexPathForCell(cell)
+        
         downloadImage(urlString!)
+        
+        print("\(currentIndexPath)")
+        
     }
     
     // MARK: - Download Image Func
@@ -118,7 +128,10 @@ class SPTableViewController: UITableViewController, DelegateProtocolCell {
                 guard let data = data where error == nil else { return }
                 print(response?.suggestedFilename ?? "")
                 print("Download Finished")
-                //model.image = UIImage(data: data)
+                
+                self.model[(currentIndexPath?.row)!].image = UIImage(data: data)
+                
+                print("Image set in model")
             }
         }
     }
