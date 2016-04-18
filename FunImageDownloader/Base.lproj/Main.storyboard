@@ -104,6 +104,7 @@
                                     <outlet property="myButton" destination="FAj-fw-njT" id="1WU-sJ-oCL"/>
                                     <outlet property="percentsProgressLabel" destination="9ou-5J-gvu" id="zPC-Zt-Vhy"/>
                                     <outlet property="progressView" destination="tpd-Zz-BCo" id="cQj-tx-RxK"/>
+                                    <segue destination="QUm-Hk-HG0" kind="show" identifier="ShowDetails" id="VBR-1a-mi2"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -117,6 +118,48 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9KK-KH-VhA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="948" y="234"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="EGW-i3-vEW">
+            <objects>
+                <viewController id="QUm-Hk-HG0" customClass="DetailViewController" customModule="FunImageDownloader" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Jqc-ZJ-Zcn"/>
+                        <viewControllerLayoutGuide type="bottom" id="FoR-CG-kp8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vnc-PN-WNy">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no-image" translatesAutoresizingMaskIntoConstraints="NO" id="TH6-xX-Wrw">
+                                <rect key="frame" x="20" y="74" width="560" height="196"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="231-pI-sCR">
+                                <rect key="frame" x="279" y="290" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="TH6-xX-Wrw" firstAttribute="trailing" secondItem="vnc-PN-WNy" secondAttribute="trailingMargin" id="1nb-NC-yAP"/>
+                            <constraint firstItem="TH6-xX-Wrw" firstAttribute="centerX" secondItem="vnc-PN-WNy" secondAttribute="centerX" id="BVO-Bm-XFC"/>
+                            <constraint firstItem="231-pI-sCR" firstAttribute="top" secondItem="TH6-xX-Wrw" secondAttribute="bottom" constant="20" id="CY4-Bl-Arr"/>
+                            <constraint firstItem="TH6-xX-Wrw" firstAttribute="leading" secondItem="vnc-PN-WNy" secondAttribute="leadingMargin" id="UDw-sf-1ye"/>
+                            <constraint firstItem="TH6-xX-Wrw" firstAttribute="top" secondItem="Jqc-ZJ-Zcn" secondAttribute="bottom" constant="10" id="gDb-FD-Vft"/>
+                            <constraint firstItem="231-pI-sCR" firstAttribute="centerY" secondItem="vnc-PN-WNy" secondAttribute="centerY" id="udk-uA-S0X"/>
+                            <constraint firstItem="231-pI-sCR" firstAttribute="centerX" secondItem="vnc-PN-WNy" secondAttribute="centerX" id="y9y-Bi-BW9"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="detaiIImageView" destination="TH6-xX-Wrw" id="Lfi-uI-sfY"/>
+                        <outlet property="detailNameLabel" destination="231-pI-sCR" id="zVF-7Z-Bp9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Hj-NZ-APw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1611" y="234"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="9jw-Ez-gkF">

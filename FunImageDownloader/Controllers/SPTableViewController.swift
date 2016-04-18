@@ -10,11 +10,15 @@ import UIKit
 
 var currentIndexPath : NSIndexPath?
 
-class SPTableViewController: UITableViewController, DelegateProtocolCell {
+class SPTableViewController: UITableViewController, DelegateProtocolCell, NSURLSessionDelegate {
     
     // MARK - Properties
     
+    var downloadProgress = [Float](count: 21, repeatedValue: 0.0)
+    
     var model = [SPModel]()
+    
+    // MARK - Our sourse of data
     
     let imagesLinksAdnNames = ["Eiffel Tower" : "http://worth1000.s3.amazonaws.com/submissions/555000/555068_fc7b.jpg",
                                "Coliseum" : "http://www.worldfortravel.com/wp-content/uploads/2012/06/The-Colosseum-Airiel-View.jpg",
@@ -95,10 +99,14 @@ class SPTableViewController: UITableViewController, DelegateProtocolCell {
         cell.imageName.text = modelItem.name
         cell.cellImageLikn = modelItem.link
         
+        cell.progressView.progress = downloadProgress[indexPath.row]
+        
+        print("\(downloadProgress[indexPath.row])")
+        
         if modelItem.image != nil{
             cell.imagePreview.image = modelItem.image
         }
-        
+                
         return cell
     }
     
@@ -108,10 +116,9 @@ class SPTableViewController: UITableViewController, DelegateProtocolCell {
         
         currentIndexPath = self.tableView.indexPathForCell(cell)
         
-        downloadImage(urlString!)
-        
         print("\(currentIndexPath)")
         
+        downloadImage(urlString!)
     }
     
     // MARK: - Download Image Func
@@ -134,6 +141,19 @@ class SPTableViewController: UITableViewController, DelegateProtocolCell {
                 print("Image set in model")
             }
         }
+    }
+    
+    // MARK - ProgressView
+    
+    func URLSession(session: NSURLSession, task: NSURLSessionTask, didSendBodyData bytesSent: Int64, totalBytesSent: Int64, totalBytesExpectedToSend: Int64){
+        
+        dispatch_async(dispatch_get_main_queue()) {
+            
+            self.downloadProgress[(currentIndexPath?.row)!] = Float(totalBytesSent) / Float(totalBytesExpectedToSend)
+            
+            self.tableView.reloadData()
+        }
+        
     }
 
     /*
@@ -171,14 +191,27 @@ class SPTableViewController: UITableViewController, DelegateProtocolCell {
     }
     */
 
-    /*
-    // MARK: - Navigation
+     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        
+        if (segue.identifier == "ShowDetails") {
+            if let destination = segue.destinationViewController as? DetailViewController {
+                let path = self.tableView.indexPathForSelectedRow
+                //let cell = tableView.cellForRowAtIndexPath(path!)
+                
+                let modelItem = model[(path?.row)!]
+                //destination.viaSegue = (modelItem.name)
+                print(modelItem.name)
+            }
+        }
     }
-    */
 
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        _ = tableView.indexPathForSelectedRow!
+        if let _ = tableView.cellForRowAtIndexPath(indexPath) {
+            self.performSegueWithIdentifier("ShowDetails", sender: self)
+        }
+    }
+    
 }

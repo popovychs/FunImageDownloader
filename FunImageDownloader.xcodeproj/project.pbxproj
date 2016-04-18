@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3EB5B8381CC57C240073D3DF /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB5B8371CC57C240073D3DF /* DetailViewController.swift */; };
 		3EDD1C051CBFD910002319CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDD1C041CBFD910002319CC /* AppDelegate.swift */; };
 		3EDD1C0A1CBFD910002319CC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EDD1C081CBFD910002319CC /* Main.storyboard */; };
 		3EDD1C0C1CBFD910002319CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3EDD1C0B1CBFD910002319CC /* Assets.xcassets */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3EB5B8371CC57C240073D3DF /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailViewController.swift; path = Controllers/DetailViewController.swift; sourceTree = "<group>"; };
 		3EDD1C011CBFD910002319CC /* FunImageDownloader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FunImageDownloader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EDD1C041CBFD910002319CC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3EDD1C091CBFD910002319CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 			children = (
 				3EDD1C161CBFEC2A002319CC /* SPTableViewController.swift */,
 				3EDD1C1B1CBFF8C6002319CC /* SPTableViewCell.swift */,
+				3EB5B8371CC57C240073D3DF /* DetailViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -175,6 +178,7 @@
 			files = (
 				3EE8D8021CC1828700AD47F0 /* SPModel.swift in Sources */,
 				3EDD1C171CBFEC2A002319CC /* SPTableViewController.swift in Sources */,
+				3EB5B8381CC57C240073D3DF /* DetailViewController.swift in Sources */,
 				3EDD1C1C1CBFF8C6002319CC /* SPTableViewCell.swift in Sources */,
 				3EDD1C051CBFD910002319CC /* AppDelegate.swift in Sources */,
 			);
