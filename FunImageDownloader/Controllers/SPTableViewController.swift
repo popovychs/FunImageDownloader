@@ -106,7 +106,7 @@ class SPTableViewController: UITableViewController, DelegateProtocolCell, NSURLS
         if modelItem.image != nil{
             cell.imagePreview.image = modelItem.image
         }
-                
+        
         return cell
     }
     
@@ -176,21 +176,6 @@ class SPTableViewController: UITableViewController, DelegateProtocolCell, NSURLS
     }
     */
 
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
      // MARK: - Navigation
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -201,16 +186,12 @@ class SPTableViewController: UITableViewController, DelegateProtocolCell, NSURLS
             if let destination = segue.destinationViewController as? DetailViewController {
                 if let cellIndex = tableView.indexPathForSelectedRow?.row {
                     destination.detailNameLabelSegue = model[cellIndex].name
+                    if model[cellIndex].image != nil {
+                        destination.detailImageFromSegue = model[cellIndex].image
+                    }
                 }
             }
         }
     }
-
-//    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-//        _ = tableView.indexPathForSelectedRow!
-//        if let _ = tableView.cellForRowAtIndexPath(indexPath) {
-//            self.performSegueWithIdentifier("ShowDetails", sender: self)
-//        }
-//    }
     
 }

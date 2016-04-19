@@ -10,18 +10,26 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
-    //@IBOutlet var detailImageView: UIImageView!
+    // MARK: - Outlets
+    
+    @IBOutlet var detailImageView: UIImageView!
     @IBOutlet var detailNameLabel: UILabel!
     
+    // MARK: - Properties
+    
     var detailNameLabelSegue = ""
+    var detailImageFromSegue : UIImage?
+    
+    // MARK: - Methods
     
     override func viewWillAppear(animated: Bool) {
+        
         detailNameLabel.text = detailNameLabelSegue
+        
+        if detailImageFromSegue != nil {
+            detailImageView.image = detailImageFromSegue
+        }
+        
     }
     
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//        
-//        detailNameLabel.text = viaSegue
-//    }
 }

@@ -14,11 +14,11 @@ protocol DelegateProtocolCell {
 
 class SPTableViewCell: UITableViewCell {
     
-    // MARK: Delegate Property
+    // MARK: - Delegate Property
     
     var cellDelegate : DelegateProtocolCell? = nil
     
-    // MARK: - Properties
+    // MARK: - Outlets
     
     @IBOutlet var imagePreview: UIImageView!
     @IBOutlet var imageName: UILabel!
@@ -26,9 +26,11 @@ class SPTableViewCell: UITableViewCell {
     @IBOutlet var percentsProgressLabel: UILabel!
     @IBOutlet var myButton: UIButton!
     
+    // MARK: - Properties
+    
     var cellImageLikn : String?
     
-    // MARK: - Functions
+    // MARK: - Methods
 
     override func awakeFromNib() {
         super.awakeFromNib()
