@@ -195,23 +195,22 @@ class SPTableViewController: UITableViewController, DelegateProtocolCell, NSURLS
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-        if (segue.identifier == "ShowDetails") {
+        let segueIdentifier = "ShowDetails"
+        
+        if segue.identifier == segueIdentifier {
             if let destination = segue.destinationViewController as? DetailViewController {
-                let path = self.tableView.indexPathForSelectedRow
-                //let cell = tableView.cellForRowAtIndexPath(path!)
-                
-                let modelItem = model[(path?.row)!]
-                //destination.viaSegue = (modelItem.name)
-                print(modelItem.name)
+                if let cellIndex = tableView.indexPathForSelectedRow?.row {
+                    destination.detailNameLabelSegue = model[cellIndex].name
+                }
             }
         }
     }
 
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        _ = tableView.indexPathForSelectedRow!
-        if let _ = tableView.cellForRowAtIndexPath(indexPath) {
-            self.performSegueWithIdentifier("ShowDetails", sender: self)
-        }
-    }
+//    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+//        _ = tableView.indexPathForSelectedRow!
+//        if let _ = tableView.cellForRowAtIndexPath(indexPath) {
+//            self.performSegueWithIdentifier("ShowDetails", sender: self)
+//        }
+//    }
     
 }

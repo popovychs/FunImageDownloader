@@ -153,7 +153,6 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="detaiIImageView" destination="TH6-xX-Wrw" id="Lfi-uI-sfY"/>
                         <outlet property="detailNameLabel" destination="231-pI-sCR" id="zVF-7Z-Bp9"/>
                     </connections>
                 </viewController>
