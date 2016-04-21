@@ -58,7 +58,7 @@ class SPTableViewController: UITableViewController, DelegateProtocolCell, NSURLS
         
         model = setModel(imagesLinksAdnNames)
         
-        self.tableView.reloadData()
+        //self.tableView.reloadData()
         
     }
 
@@ -106,8 +106,6 @@ class SPTableViewController: UITableViewController, DelegateProtocolCell, NSURLS
         print("\(currentIndexPath)")
         
         downloadImage(urlString!)
-        
-        
     }
     
     // MARK: - Download Image Func
@@ -128,6 +126,9 @@ class SPTableViewController: UITableViewController, DelegateProtocolCell, NSURLS
                 self.model[(currentIndexPath?.row)!].image = UIImage(data: data)
                 
                 print("Image set in model")
+                
+                // Reload cell!
+                self.tableView.reloadRowsAtIndexPaths([currentIndexPath!], withRowAnimation: .None)
             }
         }
     }
