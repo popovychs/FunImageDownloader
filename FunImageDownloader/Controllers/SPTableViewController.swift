@@ -51,10 +51,6 @@ class SPTableViewController: UITableViewController, DelegateProtocolCell, NSURLS
         return model
     }
     
-    override func viewWillAppear(animated: Bool) {
-        
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -64,16 +60,6 @@ class SPTableViewController: UITableViewController, DelegateProtocolCell, NSURLS
         
         self.tableView.reloadData()
         
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     // MARK: - Table view data source
@@ -99,12 +85,13 @@ class SPTableViewController: UITableViewController, DelegateProtocolCell, NSURLS
         cell.imageName.text = modelItem.name
         cell.cellImageLikn = modelItem.link
         
-        cell.progressView.progress = downloadProgress[indexPath.row]
+        cell.progressBar.setProgress(0, animated: true)
+        cell.progressBar.progress = downloadProgress[indexPath.row]
         
         print("\(downloadProgress[indexPath.row])")
         
         if modelItem.image != nil{
-            cell.imagePreview.image = modelItem.image
+                cell.imagePreview.image = modelItem.image
         }
         
         return cell
@@ -119,6 +106,8 @@ class SPTableViewController: UITableViewController, DelegateProtocolCell, NSURLS
         print("\(currentIndexPath)")
         
         downloadImage(urlString!)
+        
+        
     }
     
     // MARK: - Download Image Func
@@ -151,9 +140,9 @@ class SPTableViewController: UITableViewController, DelegateProtocolCell, NSURLS
             
             self.downloadProgress[(currentIndexPath?.row)!] = Float(totalBytesSent) / Float(totalBytesExpectedToSend)
             
-            self.tableView.reloadData()
+            print("\(self.downloadProgress[(currentIndexPath?.row)!])")
+            
         }
-        
     }
 
     /*

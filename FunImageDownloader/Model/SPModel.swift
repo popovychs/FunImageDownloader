@@ -21,8 +21,6 @@ class SPModel {
     init(name: String, link: String){
         self.name = name
         self.link = link
-        //self.image = image
     }
-    
-    
+        
 }

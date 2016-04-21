@@ -22,8 +22,8 @@ class SPTableViewCell: UITableViewCell {
     
     @IBOutlet var imagePreview: UIImageView!
     @IBOutlet var imageName: UILabel!
-    @IBOutlet var progressView: UIProgressView!
-    @IBOutlet var percentsProgressLabel: UILabel!
+    @IBOutlet var progressBar: UIProgressView!
+    @IBOutlet var progressCount: UILabel!
     @IBOutlet var myButton: UIButton!
     
     // MARK: - Properties
@@ -50,6 +50,7 @@ class SPTableViewCell: UITableViewCell {
         if (cellDelegate != nil) {
             cellDelegate?.didTabButtonWithCell(self)
         }
+        
     }
 
 }
