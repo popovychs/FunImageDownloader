@@ -29,7 +29,6 @@ class DetailViewController: UIViewController {
         if detailImageFromSegue != nil {
             detailImageView.image = detailImageFromSegue
         }
-        
     }
     
 }

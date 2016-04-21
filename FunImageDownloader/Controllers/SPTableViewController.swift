@@ -42,14 +42,17 @@ class SPTableViewController: UITableViewController, DelegateProtocolCell, NSURLS
                        "Victoria Falls" : "http://pureafrica.com.au/wp-content/uploads/victoria-falls-canyon-view.jpg",
                        "Great Wall" : "http://dorian.derobert.free.fr/blog/images/TDM_chine/IMG_3766.JPG"]
 
+    // MARK: - Initialize Data Model
+    
     func setModel(dictionary: [String:String]) -> [SPModel] {
         
         for (key, value) in dictionary{
             model.append(SPModel(name: key, link: value))
         }
-        
         return model
     }
+    
+    // MARK: - Table View
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,9 +60,6 @@ class SPTableViewController: UITableViewController, DelegateProtocolCell, NSURLS
         navigationItem.title = "Fun Image Downloader"
         
         model = setModel(imagesLinksAdnNames)
-        
-        //self.tableView.reloadData()
-        
     }
 
     // MARK: - Table view data source
@@ -87,8 +87,6 @@ class SPTableViewController: UITableViewController, DelegateProtocolCell, NSURLS
         
         cell.progressBar.setProgress(0, animated: true)
         cell.progressBar.progress = downloadProgress[indexPath.row]
-        
-        print("\(downloadProgress[indexPath.row])")
         
         if modelItem.image != nil{
                 cell.imagePreview.image = modelItem.image
@@ -124,7 +122,6 @@ class SPTableViewController: UITableViewController, DelegateProtocolCell, NSURLS
                 print("Download Finished")
                 
                 self.model[(currentIndexPath?.row)!].image = UIImage(data: data)
-                
                 print("Image set in model")
                 
                 // Reload cell!
@@ -146,27 +143,7 @@ class SPTableViewController: UITableViewController, DelegateProtocolCell, NSURLS
         }
     }
 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-     // MARK: - Navigation
+    // MARK: - Navigation to Detail View
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         

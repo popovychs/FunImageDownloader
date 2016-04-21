@@ -30,13 +30,13 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RPC-8a-cIr">
-                                            <rect key="frame" x="126" y="4" width="230" height="21"/>
+                                            <rect key="frame" x="126" y="9" width="230" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="6DJ-8h-hsL"/>
                                                 <constraint firstAttribute="width" constant="230" id="o1e-nw-jdN"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FAj-fw-njT">
@@ -84,7 +84,7 @@
                                         <constraint firstAttribute="bottomMargin" secondItem="tpd-Zz-BCo" secondAttribute="bottom" constant="13" id="kHI-fg-teM"/>
                                         <constraint firstItem="tpd-Zz-BCo" firstAttribute="leading" secondItem="Qdh-Kj-Tmr" secondAttribute="leadingMargin" constant="118" id="mR4-DD-lR7"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="FAj-fw-njT" secondAttribute="trailing" constant="10" id="qNR-X4-b6E"/>
-                                        <constraint firstItem="tpd-Zz-BCo" firstAttribute="top" secondItem="RPC-8a-cIr" secondAttribute="bottom" constant="21" id="qf9-3E-qeW"/>
+                                        <constraint firstItem="tpd-Zz-BCo" firstAttribute="top" secondItem="RPC-8a-cIr" secondAttribute="bottom" constant="16" id="qf9-3E-qeW"/>
                                         <constraint firstItem="RPC-8a-cIr" firstAttribute="leading" secondItem="tpd-Zz-BCo" secondAttribute="leading" id="zfk-Ug-uBQ"/>
                                     </constraints>
                                     <variation key="default">
