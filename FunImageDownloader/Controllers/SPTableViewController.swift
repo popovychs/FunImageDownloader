@@ -20,7 +20,7 @@ class SPTableViewController: UITableViewController, DelegateProtocolCell, NSURLS
     
     // MARK - Our sourse of data
     
-    let imagesLinksAdnNames = ["Eiffel Tower" : "http://worth1000.s3.amazonaws.com/submissions/555000/555068_fc7b.jpg",
+    let imagesLinksAndNames = ["Eiffel Tower" : "http://worth1000.s3.amazonaws.com/submissions/555000/555068_fc7b.jpg",
                                "Coliseum" : "http://www.worldfortravel.com/wp-content/uploads/2012/06/The-Colosseum-Airiel-View.jpg",
                                "Moon" : "https://theyoungastronomer.files.wordpress.com/2012/08/img_2340.jpg",
                                "Mustang" : "http://cervinis.com.p8.hostingprod.com/cusphotos/files/Cfakepath00205-09mustang-concept-ram-air-hood01356552182.jpg",
@@ -59,7 +59,7 @@ class SPTableViewController: UITableViewController, DelegateProtocolCell, NSURLS
         
         navigationItem.title = "Fun Image Downloader"
         
-        model = setModel(imagesLinksAdnNames)
+        model = setModel(imagesLinksAndNames)
     }
 
     // MARK: - Table view data source
@@ -89,7 +89,9 @@ class SPTableViewController: UITableViewController, DelegateProtocolCell, NSURLS
         cell.progressBar.progress = downloadProgress[indexPath.row]
         
         if modelItem.image != nil{
-                cell.imagePreview.image = modelItem.image
+            cell.imagePreview.image = modelItem.image
+        } else {
+            cell.imagePreview.image = UIImage(named: "no-image.jpeg")
         }
         
         return cell
@@ -137,6 +139,9 @@ class SPTableViewController: UITableViewController, DelegateProtocolCell, NSURLS
         dispatch_async(dispatch_get_main_queue()) {
             
             self.downloadProgress[(currentIndexPath?.row)!] = Float(totalBytesSent) / Float(totalBytesExpectedToSend)
+            
+            var cell = self.tableView.cellForRowAtIndexPath(currentIndexPath!)
+            
             
             print("\(self.downloadProgress[(currentIndexPath?.row)!])")
             
