@@ -136,14 +136,15 @@ class SPTableViewController: UITableViewController, DelegateProtocolCell, NSURLS
     
     func URLSession(session: NSURLSession, task: NSURLSessionTask, didSendBodyData bytesSent: Int64, totalBytesSent: Int64, totalBytesExpectedToSend: Int64){
         
+        print("IN didSendBodyData")
+        
         dispatch_async(dispatch_get_main_queue()) {
+            
+            print("IN didSendBodyData thread")
             
             self.downloadProgress[(currentIndexPath?.row)!] = Float(totalBytesSent) / Float(totalBytesExpectedToSend)
             
-            var cell = self.tableView.cellForRowAtIndexPath(currentIndexPath!)
-            
-            
-            print("\(self.downloadProgress[(currentIndexPath?.row)!])")
+            print("TotalBytesSent \(totalBytesSent) = TotalBytesExpectedToSend \(totalBytesExpectedToSend)")
             
         }
     }

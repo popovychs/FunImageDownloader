@@ -30,12 +30,14 @@ class SPTableViewCell: UITableViewCell {
     
     var cellImageLikn : String?
     
-    // MARK: - Methods
+    // MARK: - Costumize cell
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        myButton.layer.cornerRadius = 3
     }
+    
+    // MARK: - Button Delegate
     
     @IBAction func pressButton(sender: AnyObject) {
         
