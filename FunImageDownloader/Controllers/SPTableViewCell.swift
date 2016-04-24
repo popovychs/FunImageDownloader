@@ -42,9 +42,9 @@ class SPTableViewCell: UITableViewCell {
     
     @IBAction func pressButton(sender: AnyObject) {
         
-        myButton.setTitle(" STOP ", forState: .Normal)
+        //myButton.setTitle("CANCEL", forState: .Normal)
         
-        if(myButton.titleLabel!.text == " STOP ") {
+        if(myButton.titleLabel!.text == "CANCEL") {
             cellDelegate?.cancelDownloadImage(self)
         } else {
             cellDelegate?.downloadImage(self)

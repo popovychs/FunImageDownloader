@@ -39,21 +39,6 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FAj-fw-njT">
-                                            <rect key="frame" x="532" y="19" width="50" height="30"/>
-                                            <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="50" id="EKx-Da-pNE"/>
-                                                <constraint firstAttribute="height" constant="30" id="JML-hE-RzJ"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                            <state key="normal" title="START">
-                                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            </state>
-                                            <connections>
-                                                <action selector="pressButton:" destination="b08-89-N0w" eventType="touchUpInside" id="m0h-la-gA7"/>
-                                            </connections>
-                                        </button>
                                         <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="tpd-Zz-BCo">
                                             <rect key="frame" x="126" y="46" width="378" height="2"/>
                                         </progressView>
@@ -67,6 +52,21 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FAj-fw-njT">
+                                            <rect key="frame" x="512" y="18" width="70" height="30"/>
+                                            <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="70" id="EKx-Da-pNE"/>
+                                                <constraint firstAttribute="height" constant="30" id="JML-hE-RzJ"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                            <state key="normal" title="START">
+                                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="pressButton:" destination="b08-89-N0w" eventType="touchUpInside" id="m0h-la-gA7"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="tpd-Zz-BCo" firstAttribute="leading" secondItem="Qdh-Kj-Tmr" secondAttribute="leadingMargin" constant="10" id="1En-um-Y4c"/>
@@ -74,7 +74,7 @@
                                         <constraint firstItem="FAj-fw-njT" firstAttribute="trailing" secondItem="Qdh-Kj-Tmr" secondAttribute="trailingMargin" constant="5" id="2oz-t0-nVa"/>
                                         <constraint firstItem="yYM-qU-Zg6" firstAttribute="leading" secondItem="Qdh-Kj-Tmr" secondAttribute="leadingMargin" constant="10" id="7EL-lt-fDA"/>
                                         <constraint firstItem="RPC-8a-cIr" firstAttribute="leading" secondItem="yYM-qU-Zg6" secondAttribute="trailing" constant="10" id="BsB-pH-th4"/>
-                                        <constraint firstItem="FAj-fw-njT" firstAttribute="centerY" secondItem="Qdh-Kj-Tmr" secondAttribute="centerY" id="QML-Km-qnB"/>
+                                        <constraint firstItem="FAj-fw-njT" firstAttribute="centerY" secondItem="Qdh-Kj-Tmr" secondAttribute="centerY" constant="-1.5" id="QML-Km-qnB"/>
                                         <constraint firstItem="yYM-qU-Zg6" firstAttribute="leading" secondItem="Qdh-Kj-Tmr" secondAttribute="leadingMargin" constant="10" id="Vmh-Mw-XZV"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="tpd-Zz-BCo" secondAttribute="trailing" constant="88" id="aa1-GY-ptS"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="FAj-fw-njT" secondAttribute="trailing" constant="10" id="e6X-a2-UkA"/>

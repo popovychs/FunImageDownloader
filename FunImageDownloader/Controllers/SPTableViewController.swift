@@ -95,6 +95,16 @@ class SPTableViewController: UITableViewController, DelegateProtocolCell {
         cell.imageName.text = modelItem.name
         cell.cellImageLikn = modelItem.link
         
+        //var showDownloadControls = false
+        if let download = activeDownloads[cell.cellImageLikn!] {
+            //showDownloadControls = true
+            
+            cell.progressBar.progress = download.downloadProgresss
+            
+            let title = (download.isDownloading) ? "CANCEL" : "START"
+            cell.myButton.setTitle(title, forState: UIControlState.Normal)
+        }
+        
         if modelItem.image != nil{
             cell.imagePreview.image = modelItem.image
         } else {
@@ -110,15 +120,15 @@ class SPTableViewController: UITableViewController, DelegateProtocolCell {
     func startDownload(model: SPModel) {
         
         if let urlString = model.link, url =  NSURL(string: urlString) {
-            // 1
+
             let download = SPDownloadManager(url: urlString)
-            // 2
+
             download.downloadTask = downloadsSession.downloadTaskWithURL(url)
-            // 3
+
             download.downloadTask!.resume()
-            // 4
+
             download.isDownloading = true
-            // 5
+
             activeDownloads[download.url] = download
             
         }
