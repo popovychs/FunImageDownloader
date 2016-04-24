@@ -9,7 +9,8 @@
 import UIKit
 
 protocol DelegateProtocolCell {
-    func didTabButtonWithCell(cell: SPTableViewCell)
+    func downloadImage(cell: SPTableViewCell)
+    func cancelDownloadImage(cell: SPTableViewCell)
 }
 
 class SPTableViewCell: UITableViewCell {
@@ -42,10 +43,13 @@ class SPTableViewCell: UITableViewCell {
     @IBAction func pressButton(sender: AnyObject) {
         
         myButton.setTitle(" STOP ", forState: .Normal)
-
-        if (cellDelegate != nil) {
-            cellDelegate?.didTabButtonWithCell(self)
+        
+        if(myButton.titleLabel!.text == " STOP ") {
+            cellDelegate?.cancelDownloadImage(self)
+        } else {
+            cellDelegate?.downloadImage(self)
         }
+    
     }
 
 }

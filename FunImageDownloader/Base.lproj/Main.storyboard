@@ -58,9 +58,9 @@
                                             <rect key="frame" x="126" y="46" width="378" height="2"/>
                                         </progressView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="0 %" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ou-5J-gvu">
-                                            <rect key="frame" x="462" y="18" width="42" height="21"/>
+                                            <rect key="frame" x="454" y="18" width="50" height="21"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="42" id="q5G-gS-zwk"/>
+                                                <constraint firstAttribute="width" constant="50" id="q5G-gS-zwk"/>
                                                 <constraint firstAttribute="height" constant="21" id="xzS-kU-7rH"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>

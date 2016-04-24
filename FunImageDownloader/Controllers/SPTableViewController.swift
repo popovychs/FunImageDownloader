@@ -10,11 +10,15 @@ import UIKit
 
 var currentIndexPath : NSIndexPath?
 
-class SPTableViewController: UITableViewController, DelegateProtocolCell, NSURLSessionDelegate {
+class SPTableViewController: UITableViewController, DelegateProtocolCell {
     
-    // MARK - Properties
+    // MARK: Create Session and Initialize with Default Session Config
     
-    var downloadProgress = [Float](count: 21, repeatedValue: 0.0)
+    let defaultSession = NSURLSession(configuration: NSURLSessionConfiguration.defaultSessionConfiguration())
+    
+    // MARK - Models
+    
+    var activeDownloads = [String : SPDownloadManager]()
     
     var model = [SPModel]()
     
@@ -52,6 +56,12 @@ class SPTableViewController: UITableViewController, DelegateProtocolCell, NSURLS
         return model
     }
     
+    lazy var downloadsSession: NSURLSession = {
+        let configuration = NSURLSessionConfiguration.backgroundSessionConfigurationWithIdentifier("bgSessionConfiguration")
+        let session = NSURLSession(configuration: configuration, delegate: self, delegateQueue: nil)
+        return session
+    }()
+    
     // MARK: - Table View
     
     override func viewDidLoad() {
@@ -85,9 +95,6 @@ class SPTableViewController: UITableViewController, DelegateProtocolCell, NSURLS
         cell.imageName.text = modelItem.name
         cell.cellImageLikn = modelItem.link
         
-        cell.progressBar.setProgress(0, animated: true)
-        cell.progressBar.progress = downloadProgress[indexPath.row]
-        
         if modelItem.image != nil{
             cell.imagePreview.image = modelItem.image
         } else {
@@ -97,60 +104,83 @@ class SPTableViewController: UITableViewController, DelegateProtocolCell, NSURLS
         return cell
     }
     
-    func didTabButtonWithCell(cell: SPTableViewCell){
+    // MARK: Download methods
+    
+    // Called when the Download button for a track is tapped
+    func startDownload(model: SPModel) {
         
-        let urlString = NSURL(string: cell.cellImageLikn!)
-        
-        currentIndexPath = self.tableView.indexPathForCell(cell)
-        
-        print("\(currentIndexPath)")
-        
-        downloadImage(urlString!)
+        if let urlString = model.link, url =  NSURL(string: urlString) {
+            // 1
+            let download = SPDownloadManager(url: urlString)
+            // 2
+            download.downloadTask = downloadsSession.downloadTaskWithURL(url)
+            // 3
+            download.downloadTask!.resume()
+            // 4
+            download.isDownloading = true
+            // 5
+            activeDownloads[download.url] = download
+            
+        }
     }
     
-    // MARK: - Download Image Func
+    // MARK: - Cancel Download Image
     
-    func getDataFromUrl(url: NSURL, completion: ((data: NSData?, response: NSURLResponse?, error: NSError?) -> Void)) {
-        NSURLSession.sharedSession().dataTaskWithURL(url) { (data, response, error) in completion(data: data, response: response, error: error)}.resume()
+    func cancelDownloadImage(cell: SPTableViewCell) {
+        
+        if let urlString = cell.cellImageLikn,
+            download = activeDownloads[urlString] {
+            download.downloadTask?.cancel()
+            activeDownloads[urlString] = nil
+        }
     }
     
-    func downloadImage(url: NSURL) {
-        print("Download Started")
-        print("lastPathComponent: " + (url.lastPathComponent ?? ""))
-        getDataFromUrl(url) { (data, response, error) in
-            dispatch_async(dispatch_get_main_queue()) { () -> Void in
-                guard let data = data where error == nil else { return }
-                print(response?.suggestedFilename ?? "")
-                print("Download Finished")
-                
-                self.model[(currentIndexPath?.row)!].image = UIImage(data: data)
-                print("Image set in model")
-                
-                // Reload cell!
-                self.tableView.reloadRowsAtIndexPaths([currentIndexPath!], withRowAnimation: .None)
+    func downloadImage(cell: SPTableViewCell) {
+        if let indexPath = tableView.indexPathForCell(cell) {
+            let image = model[indexPath.row]
+            startDownload(image)
+            tableView.reloadRowsAtIndexPaths([NSIndexPath(forRow: indexPath.row, inSection: 0)], withRowAnimation: .None)
+        }
+    }
+    
+    // MARK: Download helper methods
+    
+    // This method generates a permanent local file path to save a track to by appending
+    // the lastPathComponent of the URL (i.e. the file name and extension of the file)
+    // to the path of the app’s Documents directory.
+    func localFilePathForUrl(previewUrl: String) -> NSURL? {
+        let documentsPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as NSString
+        if let url = NSURL(string: previewUrl), lastPathComponent = url.lastPathComponent {
+            let fullPath = documentsPath.stringByAppendingPathComponent(lastPathComponent)
+            return NSURL(fileURLWithPath:fullPath)
+        }
+        return nil
+    }
+    
+    // This method checks if the local file exists at the path generated by localFilePathForUrl(_:)
+    func localFileExistsForTrack(model: SPModel) -> Bool {
+        if let urlString = model.link, localUrl = localFilePathForUrl(urlString) {
+            var isDir : ObjCBool = false
+            if let path = localUrl.path {
+                return NSFileManager.defaultManager().fileExistsAtPath(path, isDirectory: &isDir)
             }
         }
+        return false
     }
     
-    // MARK - ProgressView
-    
-    func URLSession(session: NSURLSession, task: NSURLSessionTask, didSendBodyData bytesSent: Int64, totalBytesSent: Int64, totalBytesExpectedToSend: Int64){
-        
-        print("IN didSendBodyData")
-        
-        dispatch_async(dispatch_get_main_queue()) {
-            
-            print("IN didSendBodyData thread")
-            
-            self.downloadProgress[(currentIndexPath?.row)!] = Float(totalBytesSent) / Float(totalBytesExpectedToSend)
-            
-            print("TotalBytesSent \(totalBytesSent) = TotalBytesExpectedToSend \(totalBytesExpectedToSend)")
-            
+    func trackIndexForDownloadTask(downloadTask: NSURLSessionDownloadTask) -> Int? {
+        if let url = downloadTask.originalRequest?.URL?.absoluteString {
+            for (index, image) in model.enumerate() {
+                if url == image.link {
+                    return index
+                }
+            }
         }
+        return nil
     }
-
+    
     // MARK: - Navigation to Detail View
-
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         let segueIdentifier = "ShowDetails"
@@ -167,4 +197,55 @@ class SPTableViewController: UITableViewController, DelegateProtocolCell, NSURLS
         }
     }
     
+}
+
+// MARK: - NSURLSessionDelegate
+
+extension SPTableViewController: NSURLSessionDelegate {
+    
+    func URLSessionDidFinishEventsForBackgroundURLSession(session: NSURLSession) {
+        if let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate {
+            if let completionHandler = appDelegate.backgroundSessionCompletionHandler {
+                appDelegate.backgroundSessionCompletionHandler = nil
+                dispatch_async(dispatch_get_main_queue(), {
+                    completionHandler()
+                })
+            }
+        }
+    }
+}
+
+// MARK: - NSURLSessionDownloadDelegate
+
+extension SPTableViewController: NSURLSessionDownloadDelegate {
+    func URLSession(session: NSURLSession, downloadTask: NSURLSessionDownloadTask, didFinishDownloadingToURL location: NSURL) {
+        
+        let data = NSData(contentsOfURL: location)
+        let image = UIImage(data: data!)
+        
+        if let trackIndex = trackIndexForDownloadTask(downloadTask) {
+            dispatch_async(dispatch_get_main_queue(), {
+                self.model[trackIndex].image = image
+                self.tableView.reloadRowsAtIndexPaths([NSIndexPath(forRow: trackIndex, inSection: 0)], withRowAnimation: .None)
+            })
+        }
+    }
+    
+    func URLSession(session: NSURLSession, downloadTask: NSURLSessionDownloadTask, didWriteData bytesWritten: Int64, totalBytesWritten: Int64, totalBytesExpectedToWrite: Int64) {
+        
+        // 1
+        if let downloadUrl = downloadTask.originalRequest?.URL?.absoluteString,
+            download = activeDownloads[downloadUrl] {
+            
+            download.downloadProgresss = Float(totalBytesWritten)/Float(totalBytesExpectedToWrite)
+            
+            if let trackIndex = trackIndexForDownloadTask(downloadTask), let trackCell = tableView.cellForRowAtIndexPath(NSIndexPath(forRow: trackIndex, inSection: 0)) as? SPTableViewCell {
+                dispatch_async(dispatch_get_main_queue(), {
+                    trackCell.progressBar.progress = download.downloadProgresss
+                    trackCell.progressCount.text =  String(format: "%.1f%% ",  download.downloadProgresss * 100)
+                })
+            }
+        }
+    }
+
 }

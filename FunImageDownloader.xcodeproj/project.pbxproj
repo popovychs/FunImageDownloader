@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3EB5B8381CC57C240073D3DF /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB5B8371CC57C240073D3DF /* DetailViewController.swift */; };
+		3EC3B93D1CCC17C700056C88 /* SPDownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC3B93C1CCC17C700056C88 /* SPDownloadManager.swift */; };
 		3EDD1C051CBFD910002319CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDD1C041CBFD910002319CC /* AppDelegate.swift */; };
 		3EDD1C0A1CBFD910002319CC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EDD1C081CBFD910002319CC /* Main.storyboard */; };
 		3EDD1C0C1CBFD910002319CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3EDD1C0B1CBFD910002319CC /* Assets.xcassets */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		3EB5B8371CC57C240073D3DF /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailViewController.swift; path = Controllers/DetailViewController.swift; sourceTree = "<group>"; };
+		3EC3B93C1CCC17C700056C88 /* SPDownloadManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SPDownloadManager.swift; path = Classes/SPDownloadManager.swift; sourceTree = "<group>"; };
 		3EDD1C011CBFD910002319CC /* FunImageDownloader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FunImageDownloader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EDD1C041CBFD910002319CC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3EDD1C091CBFD910002319CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -41,6 +43,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3EC3B93E1CCC17D000056C88 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				3EC3B93F1CCC17DD00056C88 /* SPDownloadManager */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		3EC3B93F1CCC17DD00056C88 /* SPDownloadManager */ = {
+			isa = PBXGroup;
+			children = (
+				3EC3B93C1CCC17C700056C88 /* SPDownloadManager.swift */,
+			);
+			name = SPDownloadManager;
+			sourceTree = "<group>";
+		};
 		3EDD1BF81CBFD90F002319CC = {
 			isa = PBXGroup;
 			children = (
@@ -61,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				3EDD1C041CBFD910002319CC /* AppDelegate.swift */,
+				3EC3B93E1CCC17D000056C88 /* Classes */,
 				3EDD1C181CBFEC9C002319CC /* Controllers */,
 				3EE8D8031CC1829300AD47F0 /* Model */,
 				3EDD1C191CBFECD5002319CC /* Views */,
@@ -180,6 +199,7 @@
 				3EDD1C171CBFEC2A002319CC /* SPTableViewController.swift in Sources */,
 				3EB5B8381CC57C240073D3DF /* DetailViewController.swift in Sources */,
 				3EDD1C1C1CBFF8C6002319CC /* SPTableViewCell.swift in Sources */,
+				3EC3B93D1CCC17C700056C88 /* SPDownloadManager.swift in Sources */,
 				3EDD1C051CBFD910002319CC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

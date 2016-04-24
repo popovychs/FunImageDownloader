@@ -13,7 +13,7 @@ class SPModel {
     // MARK - Properties
     
     var name : String
-    var link : String
+    var link : String?
     var image : UIImage?
  
     // MARK - Initialization
